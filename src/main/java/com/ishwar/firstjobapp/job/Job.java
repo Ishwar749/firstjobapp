@@ -1,5 +1,6 @@
 package com.ishwar.firstjobapp.job;
 
+import com.ishwar.firstjobapp.company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +14,8 @@ public class Job {
     private String minSalary;
     private String maxSalary;
     private String location;
-
+    @ManyToOne
+    private Company company;
     public Job(){}
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
@@ -49,6 +51,10 @@ public class Job {
         return location;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -71,5 +77,9 @@ public class Job {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

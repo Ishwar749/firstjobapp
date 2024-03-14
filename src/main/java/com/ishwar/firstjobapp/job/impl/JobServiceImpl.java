@@ -1,11 +1,10 @@
-package com.ishwar.firstjobapp.job.Impl;
+package com.ishwar.firstjobapp.job.impl;
 
 import com.ishwar.firstjobapp.job.Job;
 import com.ishwar.firstjobapp.job.JobRepository;
 import com.ishwar.firstjobapp.job.JobService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +56,7 @@ public class JobServiceImpl implements JobService {
     }
 
     public void setJobDetails(Job oldJob, Job updatedJob){
-        oldJob.setId(updatedJob.getId());
+        // DON'T SET THE ID.
         oldJob.setDescription(updatedJob.getDescription());
         oldJob.setTitle(updatedJob.getTitle());
         oldJob.setLocation(updatedJob.getLocation());
